@@ -10,7 +10,7 @@ foreach ($file_list as $key => $file) {
 }
 // Проверяем массив test, если пустой, то 404
 if (empty($test)) {
-    header("HTTP/1.0 404 Not Found");
+    header($_SERVER['SERVER_PROTOCOL'] . '404 Not Found');
     exit;
 }
 $question = $test[0]['question'];
@@ -47,7 +47,6 @@ if (!empty($_POST['form_answer'])) {
 if (!empty($_POST['name_form']))
 {
     header("Content-type: image/jpeg");
-    header("Content-Disposition: attachment; filename:certificat.jpeg");
 
     $name = $_POST['name_form'];
     $im = imagecreatetruecolor(565, 800);
