@@ -47,6 +47,7 @@ if (!empty($_POST['form_answer'])) {
 if (!empty($_POST['name_form']))
 {
     header("Content-type: image/jpeg");
+    header('Content-Disposition: attachment; filename="image.jpg"');
 
     $name = $_POST['name_form'];
     $im = imagecreatetruecolor(565, 800);
@@ -91,10 +92,6 @@ if (!empty($_POST['name_form']))
         <input type="text" name="name_form" placeholder="Введите ваше имя">
         <button>Отправить</button>
     </form>
-<?php endif;?>
-
-<?php if (!empty($_POST['name_form'])): ?>
-    <img src="certificate.jpg" alt="Ваш сертификат">
 <?php endif;?>
 
 
